@@ -5,12 +5,13 @@
 #
 Name     : pypi-mkdocs_htmlproofer_plugin
 Version  : 0.12.0
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/c0/e3/58f7cc37e505788bac0cb811c0a3573ba612688bfbd5606cafb476bdbc50/mkdocs-htmlproofer-plugin-0.12.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c0/e3/58f7cc37e505788bac0cb811c0a3573ba612688bfbd5606cafb476bdbc50/mkdocs-htmlproofer-plugin-0.12.0.tar.gz
 Summary  : A MkDocs plugin that validates URL in rendered HTML files
 Group    : Development/Tools
 License  : MIT
+Requires: pypi-mkdocs_htmlproofer_plugin-license = %{version}-%{release}
 Requires: pypi-mkdocs_htmlproofer_plugin-python = %{version}-%{release}
 Requires: pypi-mkdocs_htmlproofer_plugin-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -20,6 +21,14 @@ BuildRequires : buildreq-distutils3
 
 %description
 # mkdocs-htmlproofer-plugin [![PyPI - Version](https://img.shields.io/pypi/v/mkdocs-htmlproofer-plugin.svg)](https://pypi.org/project/mkdocs-htmlproofer-plugin)
+
+%package license
+Summary: license components for the pypi-mkdocs_htmlproofer_plugin package.
+Group: Default
+
+%description license
+license components for the pypi-mkdocs_htmlproofer_plugin package.
+
 
 %package python
 Summary: python components for the pypi-mkdocs_htmlproofer_plugin package.
@@ -56,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681502179
+export SOURCE_DATE_EPOCH=1681788144
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -80,6 +89,8 @@ popd
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-mkdocs_htmlproofer_plugin
+cp %{_builddir}/mkdocs-htmlproofer-plugin-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/pypi-mkdocs_htmlproofer_plugin/72f1ff801b3a68783061d1450602b08d85f03b35 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -96,6 +107,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-mkdocs_htmlproofer_plugin/72f1ff801b3a68783061d1450602b08d85f03b35
 
 %files python
 %defattr(-,root,root,-)
