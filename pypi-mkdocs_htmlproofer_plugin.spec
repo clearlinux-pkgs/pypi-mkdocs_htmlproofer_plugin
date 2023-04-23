@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-mkdocs_htmlproofer_plugin
-Version  : 0.12.0
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/c0/e3/58f7cc37e505788bac0cb811c0a3573ba612688bfbd5606cafb476bdbc50/mkdocs-htmlproofer-plugin-0.12.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c0/e3/58f7cc37e505788bac0cb811c0a3573ba612688bfbd5606cafb476bdbc50/mkdocs-htmlproofer-plugin-0.12.0.tar.gz
+Version  : 0.13.1
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/50/58/b7c68dc959b694d96cc2c25c08b87b465f60e6a7723b505ba1f4b4452924/mkdocs-htmlproofer-plugin-0.13.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/50/58/b7c68dc959b694d96cc2c25c08b87b465f60e6a7723b505ba1f4b4452924/mkdocs-htmlproofer-plugin-0.13.1.tar.gz
 Summary  : A MkDocs plugin that validates URL in rendered HTML files
 Group    : Development/Tools
 License  : MIT
@@ -54,10 +54,10 @@ python3 components for the pypi-mkdocs_htmlproofer_plugin package.
 
 
 %prep
-%setup -q -n mkdocs-htmlproofer-plugin-0.12.0
-cd %{_builddir}/mkdocs-htmlproofer-plugin-0.12.0
+%setup -q -n mkdocs-htmlproofer-plugin-0.13.1
+cd %{_builddir}/mkdocs-htmlproofer-plugin-0.13.1
 pushd ..
-cp -a mkdocs-htmlproofer-plugin-0.12.0 buildavx2
+cp -a mkdocs-htmlproofer-plugin-0.13.1 buildavx2
 popd
 
 %build
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681788144
+export SOURCE_DATE_EPOCH=1682272124
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
