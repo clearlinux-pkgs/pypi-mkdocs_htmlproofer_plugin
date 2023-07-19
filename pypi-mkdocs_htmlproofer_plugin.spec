@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-mkdocs_htmlproofer_plugin
-Version  : 0.13.1
-Release  : 3
-URL      : https://files.pythonhosted.org/packages/50/58/b7c68dc959b694d96cc2c25c08b87b465f60e6a7723b505ba1f4b4452924/mkdocs-htmlproofer-plugin-0.13.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/50/58/b7c68dc959b694d96cc2c25c08b87b465f60e6a7723b505ba1f4b4452924/mkdocs-htmlproofer-plugin-0.13.1.tar.gz
+Version  : 1.0.0
+Release  : 4
+URL      : https://files.pythonhosted.org/packages/d0/9d/2ce294e5d803249acb81e52c71d84b5a87d01c8e1cd373941a42182a4ba9/mkdocs-htmlproofer-plugin-1.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d0/9d/2ce294e5d803249acb81e52c71d84b5a87d01c8e1cd373941a42182a4ba9/mkdocs-htmlproofer-plugin-1.0.0.tar.gz
 Summary  : A MkDocs plugin that validates URL in rendered HTML files
 Group    : Development/Tools
 License  : MIT
@@ -54,10 +54,10 @@ python3 components for the pypi-mkdocs_htmlproofer_plugin package.
 
 
 %prep
-%setup -q -n mkdocs-htmlproofer-plugin-0.13.1
-cd %{_builddir}/mkdocs-htmlproofer-plugin-0.13.1
+%setup -q -n mkdocs-htmlproofer-plugin-1.0.0
+cd %{_builddir}/mkdocs-htmlproofer-plugin-1.0.0
 pushd ..
-cp -a mkdocs-htmlproofer-plugin-0.13.1 buildavx2
+cp -a mkdocs-htmlproofer-plugin-1.0.0 buildavx2
 popd
 
 %build
@@ -65,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682272124
+export SOURCE_DATE_EPOCH=1689802867
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
