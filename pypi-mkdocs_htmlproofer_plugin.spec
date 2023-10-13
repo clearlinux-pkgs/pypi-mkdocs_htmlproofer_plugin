@@ -5,7 +5,7 @@
 #
 Name     : pypi-mkdocs_htmlproofer_plugin
 Version  : 1.0.0
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/d0/9d/2ce294e5d803249acb81e52c71d84b5a87d01c8e1cd373941a42182a4ba9/mkdocs-htmlproofer-plugin-1.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d0/9d/2ce294e5d803249acb81e52c71d84b5a87d01c8e1cd373941a42182a4ba9/mkdocs-htmlproofer-plugin-1.0.0.tar.gz
 Summary  : A MkDocs plugin that validates URL in rendered HTML files
